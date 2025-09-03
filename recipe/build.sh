@@ -18,7 +18,7 @@ if [[ ${cuda_compiler_version} != "None" ]]; then
     fi
     export TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
     export USE_CUDA=1
-    export MAX_JOBS=$CPU_COUNT
+    export MAX_JOBS=2
 fi
 
 $PYTHON -m pip install . -vv --no-deps --no-build-isolation
