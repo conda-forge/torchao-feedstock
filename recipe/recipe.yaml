@@ -20,7 +20,10 @@ source:
 build:
   number: 1
   string: ${{ string_prefix }}py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
-  skip: win
+  skip:
+    - win
+    # - not use_cuda  # Until the CUDA build works
+    # - match(python, "!=3.12")  # Until the build works
 
 requirements:
   build:
