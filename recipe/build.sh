@@ -5,11 +5,10 @@ set -ex
 # Number of CUDA archs reduced to fit CI resources
 if [[ ${cuda_compiler_version} != "None" ]]; then
     if [[ ${cuda_compiler_version} == 12.9 ]]; then
-        # __hfma2 is only defined for arch 5.3+, so we can't start from 5.0
-        # https://github.com/pytorch/ao/issues/2611
-        export TORCH_CUDA_ARCH_LIST="5.3;6.0;7.0;7.5;8.0;8.6;8.9;9.0;10.0;12.0+PTX"
+        # CUDA synchronization primitives are only supported for sm_70 and up.
+        export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9;9.0;10.0;12.0+PTX"
     elif [[ ${cuda_compiler_version} == 12.6 ]]; then
-        export TORCH_CUDA_ARCH_LIST="5.3;6.0;7.0;7.5;8.0;8.6;8.9"
+        export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6;8.9"
     else
         echo "Unsupported CUDA compiler version. Edit build.sh to add target CUDA archs."
         exit 1
