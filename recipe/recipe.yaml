@@ -1,7 +1,7 @@
 context:
   name: torchao
   version: "0.16.0"
-  cutlass_version: "3.9.0"
+  cutlass_version: "4.1.0"
   use_cuda: ${{ cuda_compiler_version != "None" }}
   cuda_build_string: cuda_${{ cuda_compiler_version | version_to_buildstring }}
   string_prefix: ${{ cuda_build_string if cuda_compiler_version != "None" else "cpu_" }}
@@ -14,7 +14,7 @@ source:
   - url: https://github.com/pytorch/ao/archive/refs/tags/v${{ version }}.tar.gz
     sha256: 2dffbfcfc438fb104799c99dca9876535e30ced9cd9c2315131fcaaa1f792e7d
   - url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v${{ cutlass_version }}.tar.gz
-    sha256: 0ea98a598d1f77fade5187ff6ec6d9e6ef3acd267ee68850aae6e800dcbd69c7
+    sha256: 8d4675b11e9e5207e3940eaac0f46db934ada371cbb3627c9fda642d912b6230
     target_directory: third_party/cutlass
 
 build:
