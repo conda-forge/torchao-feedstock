@@ -13,6 +13,8 @@ package:
 source:
   - url: https://github.com/pytorch/ao/archive/refs/tags/v${{ version }}.tar.gz
     sha256: 2dffbfcfc438fb104799c99dca9876535e30ced9cd9c2315131fcaaa1f792e7d
+    patches:
+      - patches/0001-Drop-default-args.patch
   - url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v${{ cutlass_version }}.tar.gz
     sha256: 8d4675b11e9e5207e3940eaac0f46db934ada371cbb3627c9fda642d912b6230
     target_directory: third_party/cutlass
