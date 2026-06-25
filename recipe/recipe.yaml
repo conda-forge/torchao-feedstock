@@ -1,6 +1,6 @@
 context:
   name: torchao
-  version: "0.16.0"
+  version: "0.17.0"
   cutlass_version: "4.1.0"
   use_cuda: ${{ cuda_compiler_version != "None" }}
   cuda_build_string: cuda_${{ cuda_compiler_version | version_to_buildstring }}
@@ -12,7 +12,7 @@ package:
 
 source:
   - url: https://github.com/pytorch/ao/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 2dffbfcfc438fb104799c99dca9876535e30ced9cd9c2315131fcaaa1f792e7d
+    sha256: d1689d7a07536f11a1e53fb51b54b00e71bce79c56ac14d62851e1aecf5a2b60
     patches:
       - patches/0001-Drop-default-args.patch
   - url: https://github.com/NVIDIA/cutlass/archive/refs/tags/v${{ cutlass_version }}.tar.gz
@@ -107,3 +107,4 @@ extra:
   recipe-maintainers:
     - shermansiu
     - isuruf
+    - xhochy
