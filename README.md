@@ -243,4 +243,5 @@ Feedstock Maintainers
 
 * [@isuruf](https://github.com/isuruf/)
 * [@shermansiu](https://github.com/shermansiu/)
+* [@xhochy](https://github.com/xhochy/)
 
