@@ -20,7 +20,7 @@ source:
     target_directory: third_party/cutlass
 
 build:
-  number: 4
+  number: 5
   string: ${{ string_prefix }}py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   skip:
     - win
